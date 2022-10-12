@@ -1,0 +1,51 @@
+#Вариант 1
+# Список стоп-слов
+list_of_stop_words = ["в", "и", "по", "за"]
+
+# Строка со стоп-словами
+string_to_process = "Сервис по поиску работы и сотрудников GEEK BRAINS опубликовал подборку высокооплачиваемых вакансий в России за сентябрь и первую половину октября 2022 г."
+
+# lambda-функция, фильтрующая стоп-слова
+split_str = string_to_process.split()
+filtered_str = ' '.join((filter(lambda s: s not in list_of_stop_words, split_str)))
+
+print("Отфильтрованная строка:a", filtered_str)
+
+
+#Вариант 2
+list1 = [ 11, 22, 33, 44]
+
+enumerate_list = enumerate(list1)
+print("Enumerated list now looks like: ", list(enumerate_list))
+
+#without start
+print("Without Start:")
+for i, item in enumerate(list1):
+    print("Index = ", i,"  :  ","value = ",item)
+
+#with start = 20
+print("With Start:")
+for i, item in enumerate(list1, 20):
+    print("Index = ", i,"  :  ","value = ",item)
+
+
+#Вариант 3
+
+people = [{
+  "first_name": "Максим",
+  "last_name": "Мусулезный",
+  "birthday": "06/04/1981"
+}, {
+  "first_name": "Кирилл",
+  "last_name": "Мусулезный",
+  "birthday": "01/16/1999"
+}]
+
+birthdays = [
+  person[term]
+  for person in people
+  for term in person
+  if term == "birthday"
+]
+
+print(birthdays)
